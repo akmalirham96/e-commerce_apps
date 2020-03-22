@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 // own import package
 import 'package:flutterappecommerce/componets/horizontal_listview.dart';
+import 'package:flutterappecommerce/componets/products.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: Colors.red,
-        title: Text('ShopShop'),
+        title: Text('Lapak fourtwnty'),
         actions: <Widget>[
           new IconButton(
               icon: Icon(
@@ -137,11 +138,19 @@ class _HomePageState extends State<HomePage> {
 
 //        widget padding
           new Padding(padding: const EdgeInsets.all(8.0),
-          child: new Text('Categories'),),
+            child: new Text('Categories'),),
 
 //        horizontal list view begins here
           HorizontalList(),
 
+//        widget padding
+          new Padding(padding: const EdgeInsets.all(8.0),
+            child: new Text('Recent Product'),),
+
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
         ],
       ),
     );
