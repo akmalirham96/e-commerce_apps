@@ -102,12 +102,12 @@ class Single_prod extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        "$product_price",
+                        "RM ${product_price}",
                         style: TextStyle(
                             color: Colors.red, fontWeight: FontWeight.w800),
                       ),
                       subtitle: Text(
-                        "$product_old_price",
+                        "RM ${product_old_price}",
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.w800,
