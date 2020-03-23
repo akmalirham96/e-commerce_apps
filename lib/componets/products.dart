@@ -96,24 +96,14 @@ class Single_prod extends StatelessWidget {
               child: GridTile(
                   footer: Container(
                     color: Colors.white70,
-                    child: ListTile(
-                      leading: Text(
-                        product_name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      title: Text(
-                        "RM ${product_price}",
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.w800),
-                      ),
-                      subtitle: Text(
-                        "RM ${product_old_price}",
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w800,
-                            decoration: TextDecoration.lineThrough),
-                      ),
-                    ),
+                    child: new Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: new Text(product_name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
+                        ),
+                        new Text("RM${product_price}", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),)
+                      ],
+                    )
                   ),
                   child: Image.asset(
                     product_picture,
