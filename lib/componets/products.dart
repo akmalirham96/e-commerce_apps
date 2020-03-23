@@ -41,7 +41,7 @@ class _ProductsState extends State<Products> {
       "price": 70,
     },
     {
-      "name": "Hills",
+      "name": "Hills second",
       "picture": "images/products/hills2.jpeg",
       "old_price": 150,
       "price": 70,
@@ -86,7 +86,13 @@ class Single_prod extends StatelessWidget {
           child: Material(
             child: InkWell(
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (context) => new ProductDetails())),
+//                passing data to product details
+                  builder: (context) => new ProductDetails(
+                    product_details_name: product_name,
+                    product_details_picture: product_picture,
+                    product_details_price: product_price,
+                    product_details_old_price: product_old_price,
+                  ))),
               child: GridTile(
                   footer: Container(
                     color: Colors.white70,
