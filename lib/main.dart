@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 // own import package
 import 'package:flutterappecommerce/componets/horizontal_listview.dart';
 import 'package:flutterappecommerce/componets/products.dart';
+import 'package:flutterappecommerce/pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
@@ -56,7 +57,9 @@ class _HomePageState extends State<HomePage> {
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
-              onPressed: () {})
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+              })
         ],
       ),
       drawer: new Drawer(
@@ -100,7 +103,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+              },
               child: ListTile(
                 title: Text('Shopping Cart'),
                 leading: Icon(Icons.shopping_cart,color: Colors.red,),
