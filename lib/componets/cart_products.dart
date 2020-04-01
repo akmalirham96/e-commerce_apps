@@ -13,7 +13,7 @@ class _Card_productsState extends State<Card_products> {
       "price": 85,
       "size": "M",
       "color": "blue",
-      "quantity":5,
+      "quantity": 5,
     },
     {
       "name": "Blazer Women",
@@ -21,7 +21,7 @@ class _Card_productsState extends State<Card_products> {
       "price": 70,
       "size": "L",
       "color": "Red",
-      "quantity":3,
+      "quantity": 3,
     },
   ];
 
@@ -29,7 +29,7 @@ class _Card_productsState extends State<Card_products> {
   Widget build(BuildContext context) {
     return new ListView.builder(
         itemCount: Product_on_the_cart.length,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return Single_cart_product(
             cart_product_name: Product_on_the_cart[index]["name"],
             cart_product_color: Product_on_the_cart[index]["color"],
@@ -58,12 +58,17 @@ class Single_cart_product extends StatelessWidget {
     this.cart_product_color,
     this.cart_product_quantity,
   });
+
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
 //        this section is for image
-        leading: new Image.asset(cart_product_picture,width: 80.0,height: 80.0,),
+        leading: new Image.asset(
+          cart_product_picture,
+          width: 80.0,
+          height: 80.0,
+        ),
         title: new Text(cart_product_name),
         subtitle: new Column(
           children: <Widget>[
@@ -71,39 +76,57 @@ class Single_cart_product extends StatelessWidget {
               children: <Widget>[
 //                this section is for the product size
                 Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: new Text("Size : "),
+                  padding: const EdgeInsets.all(0.0),
+                  child: new Text("Size : "),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(2.0),
-                  child: new Text(cart_product_size, style: TextStyle(color: Colors.red),),
+                  child: new Text(
+                    cart_product_size,
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ),
 
 //                this section is for the product color
-                new Padding(padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
-                  child: new Text("Color : "),),
-                new Padding(padding: const EdgeInsets.fromLTRB(2.0, 8.0, 8.0, 8.0),
-                  child: new Text(cart_product_color, style: TextStyle(color: Colors.red)),),
-
+                new Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
+                  child: new Text("Color : "),
+                ),
+                new Padding(
+                  padding: const EdgeInsets.fromLTRB(2.0, 8.0, 8.0, 8.0),
+                  child: new Text(cart_product_color,
+                      style: TextStyle(color: Colors.red)),
+                ),
               ],
             ),
- //                this section is for the product price
+            //                this section is for the product price
             new Container(
               alignment: Alignment.bottomLeft,
-              child: new Text("RM ${cart_product_price}", style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold)),
+              child: new Text("RM ${cart_product_price}",
+                  style: TextStyle(
+                      color: Colors.red, fontWeight: FontWeight.bold)),
             ),
           ],
         ),
         trailing: new FittedBox(
           fit: BoxFit.fill,
-          child:
-          Column(
+          child: Column(
             children: <Widget>[
-              IconButton(icon: Icon(Icons.arrow_drop_up,color: Colors.red),iconSize: 75.0, onPressed: () {}),
-              Text("${cart_product_quantity}",style: TextStyle(fontSize: 50.0,fontWeight: FontWeight.bold),),
-              IconButton(icon: Icon(Icons.arrow_drop_down,color: Colors.red
-                ,),iconSize: 75.0, onPressed: () {}),
-
+              IconButton(
+                  icon: Icon(Icons.arrow_drop_up, color: Colors.red),
+                  iconSize: 75.0,
+                  onPressed: () {}),
+              Text(
+                "${cart_product_quantity}",
+                style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
+              ),
+              IconButton(
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.red,
+                  ),
+                  iconSize: 75.0,
+                  onPressed: () {}),
             ],
           ),
         ),
@@ -111,4 +134,3 @@ class Single_cart_product extends StatelessWidget {
     );
   }
 }
-

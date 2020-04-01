@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      body: new ListView(
+      body: new Column(
         children: <Widget>[
 //        image carousel begin here
           image_carousel,
@@ -153,10 +153,9 @@ class _HomePageState extends State<HomePage> {
           new Padding(padding: const EdgeInsets.all(8.0),
             child: new Text('Recent Product'),),
 
-          Container(
-            height: 320.0,
-            child: Products(),
-          )
+          Flexible(
+              child: Products()
+          ),
         ],
       ),
     );
