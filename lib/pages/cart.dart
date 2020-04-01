@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//my imports
+import 'package:flutterappecommerce/componets/cart_products.dart';
+
 class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();
@@ -21,6 +24,9 @@ class _CartState extends State<Cart> {
               onPressed: () {}),
         ],
       ),
+
+      body: new Card_products(),
+
       bottomNavigationBar: new Container(
         color: Colors.white,
         child: Row(
